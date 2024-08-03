@@ -27,12 +27,17 @@ function per() {
 
 // Evaluate the expression in the display
 function calculate() {
-    var display = document.getElementById('display');
-    if(!display.value){
+    const display = document.getElementById('display');
+    if (!display.value) {
         display.value = 0;
     }
     try {
-        display.value = eval(display.value);
+        const result = eval(display.value);
+        if (typeof result === 'number' && !Number.isInteger(result)) {
+            display.value = result.toFixed(2);
+        } else {
+            display.value = result;
+        }
     } catch (error) {
         display.value = 'Error';
     }
