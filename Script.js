@@ -1,6 +1,6 @@
 // Append value to the display
 function appendToDisplay(value) {
-    var display = document.getElementById('display');
+    const display = document.getElementById('display');
     display.value += value;
 }
 
@@ -11,13 +11,13 @@ function clearDisplay() {
 
 // Delete the last character from the display
 function deleteLast() {
-    var display = document.getElementById('display');
+    const display = document.getElementById('display');
     display.value = display.value.slice(0, -1);
 }
 
 // Calculate the percentage
 function per() {
-    var display = document.getElementById('display');
+    const display = document.getElementById('display');
     display.value = eval(display.value) / 100;
 }
 
